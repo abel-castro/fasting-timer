@@ -1,8 +1,8 @@
 export interface IStorageProvider {
-  getStartFastingTime(): StartTimeType;
+  getStartFastingTime(): Promise<StartTimeType>;
   setStartFastingTime(newTime: Date): Promise<Date>;
   removeStartFastingTime(): void;
-  getStartEatingTime(): StartTimeType;
+  getStartEatingTime(): Promise<StartTimeType>;
   setStartEatingTime(newTime: Date): Promise<Date>;
   removeStartEatingTime(): void;
 }

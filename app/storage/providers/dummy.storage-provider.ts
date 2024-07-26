@@ -1,7 +1,7 @@
 import { IStorageProvider, StartTimeType } from "./definitions";
 
 export default class DummyStorageProvider implements IStorageProvider {
-  getStartFastingTime(): StartTimeType {
+  async getStartFastingTime(): Promise<StartTimeType> {
     return new Date("2024-07-23T03:00:00");
   }
 
@@ -11,7 +11,7 @@ export default class DummyStorageProvider implements IStorageProvider {
 
   async removeStartFastingTime() {}
 
-  getStartEatingTime(): StartTimeType {
+  async getStartEatingTime(): Promise<StartTimeType> {
     return new Date("2024-07-23T14:00:00");
   }
 

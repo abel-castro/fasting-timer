@@ -1,7 +1,7 @@
 import { IStorageProvider, StartTimeType } from "./definitions";
 
 export default class BrowserStorageProvider implements IStorageProvider {
-  getStartFastingTime(): StartTimeType {
+  async getStartFastingTime(): Promise<StartTimeType> {
     const startFastingTime = localStorage.getItem("startFastingTime");
     if (startFastingTime) {
       return new Date(startFastingTime);
@@ -17,7 +17,7 @@ export default class BrowserStorageProvider implements IStorageProvider {
     localStorage.removeItem("startFastingTime");
   }
 
-  getStartEatingTime(): StartTimeType {
+  async getStartEatingTime(): Promise<StartTimeType> {
     const startEatingTime = localStorage.getItem("startEatingTime");
     if (startEatingTime) {
       return new Date(startEatingTime);

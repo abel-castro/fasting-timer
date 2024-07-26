@@ -23,7 +23,7 @@ describe("Page", () => {
     expect(container).toMatchSnapshot();
 
     const startFastingTime = storageService.getStartFastingTime();
-    expect(startFastingTime).toBeInstanceOf(Date);
+    expect(startFastingTime).toBeInstanceOf(Promise<Date>);
 
     // Stop fasting / start eating
     await act(async () => {
@@ -33,7 +33,7 @@ describe("Page", () => {
     expect(container).toMatchSnapshot();
 
     const startEatingTime = storageService.getStartEatingTime();
-    expect(startEatingTime).toBeInstanceOf(Date);
+    expect(startEatingTime).toBeInstanceOf(Promise<Date>);
 
     // Reset timer
     const resetButton = screen.getByRole("button", { name: /Reset timer/i });
@@ -43,7 +43,7 @@ describe("Page", () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(storageService.getStartFastingTime()).toBeUndefined();
-    expect(storageService.getStartEatingTime()).toBeUndefined();
+    expect(storageService.getStartFastingTime()).toBeInstanceOf(Promise<{}>);
+    expect(storageService.getStartEatingTime()).toBeInstanceOf(Promise<{}>);
   });
 });

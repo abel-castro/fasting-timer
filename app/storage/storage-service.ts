@@ -8,7 +8,7 @@ export class StorageService {
     this.provider = provider;
   }
 
-  getStartFastingTime(): StartTimeType {
+  async getStartFastingTime(): Promise<StartTimeType> {
     return this.provider.getStartFastingTime();
   }
 
@@ -20,7 +20,7 @@ export class StorageService {
     return this.provider.removeStartFastingTime();
   }
 
-  getStartEatingTime(): StartTimeType {
+  async getStartEatingTime(): Promise<StartTimeType> {
     return this.provider.getStartEatingTime();
   }
 

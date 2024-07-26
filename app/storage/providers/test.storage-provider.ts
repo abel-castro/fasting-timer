@@ -11,7 +11,7 @@ const Data: TestStorageType = {
 };
 
 export default class TestStorageProvider implements IStorageProvider {
-  getStartFastingTime(): StartTimeType {
+  async getStartFastingTime(): Promise<StartTimeType> {
     return Data.startFastingTime;
   }
 
@@ -22,7 +22,7 @@ export default class TestStorageProvider implements IStorageProvider {
 
   async removeStartFastingTime() {}
 
-  getStartEatingTime(): StartTimeType {
+  async getStartEatingTime(): Promise<StartTimeType> {
     return Data.startEatingTime;
   }
 
