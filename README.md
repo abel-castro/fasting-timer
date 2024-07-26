@@ -1,5 +1,7 @@
 # Fasting Timer
 
+[![codecov](https://codecov.io/github/abel-castro/fasting-timer/branch/main/graph/badge.svg?token=YOUR_TOKEN)](github/abel-castro/fasting-timer)
+
 ![Fasting Timer 18:6](https://github.com/abel-castro/fasting-timer/blob/main/fasting-timer-screenshot.jpg)
 
 A timer for tracking 18:6 fasting periods.
